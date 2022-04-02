@@ -1,0 +1,236 @@
+@import './custom.scss';
+
+* {
+    padding:0px;
+    margin:0px;
+    box-sizing: border-box;
+}
+
+h2 {
+    color: $h2;
+}
+
+p,
+ul,
+li {
+    color: $p;
+    line-height: 30px;
+}
+
+ul {
+    padding-left: 1rem !important;
+}
+
+li {
+    padding-left: 0;
+    font-size: 14px;
+}
+
+.navLink {
+    color: $nav-link;
+    font-weight: 500;
+    text-transform: capitalize;
+    font-size: 15px;
+    margin-right: 1rem;
+    margin-bottom: .5rem;
+    
+}
+
+.hero-img-container,
+.img-container{
+    position: relative;
+    width: fit-content;
+    margin: 0;
+}
+
+.hero-img-container::after {
+    content: '';
+    display: block;
+    background-color: $accent;
+    position: absolute;
+    border-top-left-radius: 14px;
+    border-bottom-left-radius: 15px;
+    width: 25%;
+    top:0;
+    left:0;
+    bottom:0;
+    mix-blend-mode: multiply;
+}
+
+.square {
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    background-color: $accent;
+    border-radius: 15px;
+}
+
+.decor,
+.circle {
+    position: absolute; 
+}
+
+.circle {
+    right: -6%;
+    top:20%;
+    mix-blend-mode: multiply;
+}
+
+.decor.right {
+    right: 6%;
+    top:20%;
+    mix-blend-mode: multiply;
+}
+
+.decor.left{
+    left:-6%;
+    top: 20%;
+    mix-blend-mode: multiply;
+}
+
+.btn.btn-custom {
+    font-weight: 600;
+    border-radius: 27px;
+    padding: 1rem 2rem;
+    line-height: 17px;
+    text-transform: capitalize;
+
+    &:focus {
+        box-shadow: none;
+    }
+
+    &:focus-visible {
+        box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%)
+    }
+}
+
+.btn.btn-custom.btn-custom-primary {
+    background: $accent;
+    color: $light;
+
+    &:hover{
+        background: darken($accent, 3%);
+        color: darken($light, 3%)
+    }
+}
+
+
+.btn.btn-custom.btn-custom-secondary {
+    background: lighten($accent, 45%);
+    color: $accent;
+
+    &:hover{
+        background: lighten($accent, 40%);
+        color: darken($accent, 5%)
+    }
+}
+
+.user-name {
+    color: $dark-blue;
+    margin: 0;
+    margin-bottom: -5px;
+    padding: 0;
+}
+
+.user-role {
+    color: $accent;
+    margin: 0;
+    font-size: 14px;
+    padding: 0;
+}
+
+.card-title.card-custom-title {
+    color: $h2;
+    letter-spacing: -3%;
+}
+
+.card-link.card-custom-link {
+    color: $accent;
+    text-decoration: none;
+}
+
+.card.card-responsive {
+    width: 100%;
+}
+
+input {
+    display: block;
+    border-radius: 25px;
+    padding: 1rem 2rem;
+    border: none;
+    width: 100%;
+    max-width: 300px;
+}
+
+.footer-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.footer p {
+    color: white;
+    font-size: .9rem;
+}
+
+.footer h5 {
+    margin-bottom: .5rem;
+}
+
+@media (min-width: 400px) {
+    h1 {
+        color: $h1;
+        font-weight: 600;
+        letter-spacing: -3%;
+        line-height: 72px;
+    }
+}
+
+@media (min-width: 992px) {
+    .card.card-responsive {
+        width: 30% !important;
+        min-width: 270px;
+    }
+}
+
+@media (min-width: 768px) {
+    .footer-container:before {
+        content: '';
+        display: block;
+        background-color: $accent;
+        position: absolute;
+        border-radius: 15px;
+        width: 75px;
+        height:150px;
+        left: -3%;
+        bottom:-5%;
+    }
+    
+    .footer-container:after {
+        content: '';
+        display: block;
+        background-color: $accent;
+        position: absolute;
+        border-radius: 15px;
+        width: 75px;
+        height:200px;
+        right:-3%;
+        top:10%;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-img-container,
+    .img-container {
+        overflow: hidden;
+    }
+}
+
+@media (min-width: 1400px) {
+        h1 {
+            font-size: 45px !important; 
+        }
+}
+
+//add disable animation on mobile and reduce motion
+
+@import '~bootstrap/scss/bootstrap.scss';

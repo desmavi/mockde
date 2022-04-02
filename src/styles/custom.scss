@@ -1,0 +1,44 @@
+@use "./colors" as colors;
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+//custom variables
+$font-family-sans-serif: Poppins, sans-serif;
+$accent: colors.$accent;
+$h1: colors.$h1;
+$h2: colors.$h2;
+$p: colors.$p;
+$dark-blue: colors.$dark-blue;
+$light-blue: colors.$light-blue;
+$placeholder: colors.$placeholder;
+$nav-link: colors.$nav-link;
+
+// set custom colors
+$custom-colors: (
+    "accent": $accent,
+    "h1": $h1,
+    "h2":$h2,
+    "p": $p,
+    "dark-blue":$dark-blue,
+    "light-blue": $light-blue,
+    "placeholder": $placeholder,
+    "nav-link": $nav-link,
+);
+
+// merge maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
+$theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
+$utilities-colors: map-merge($utilities-colors, $theme-colors-rgb);
+$utilities-text-colors: map-loop($utilities-colors, rgba-css-var, "$key", "text");
+$utilities-bg-colors: map-loop($utilities-colors, rgba-css-var, "$key", "bg");
+
+//custom container max-width
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1150px,
+    xxl: 1150px
+);
