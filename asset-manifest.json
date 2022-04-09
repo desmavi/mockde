@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/mockde/static/css/main.c9ec4081.css",
+    "main.js": "/mockde/static/js/main.21b544e2.js",
+    "static/media/card-img2.png": "/mockde/static/media/card-img2.a566ed8c34b09cc57e4b.png",
+    "static/media/card-img1.png": "/mockde/static/media/card-img1.d5ca4f5c56ec7a56e55a.png",
+    "static/media/image5.png": "/mockde/static/media/image5.5d00dfa2ab6dd757f397.png",
+    "static/media/image3.png": "/mockde/static/media/image3.a855e0d7d7c566cdb96a.png",
+    "static/media/hero.png": "/mockde/static/media/hero.40646e0d05958142aaa9.png",
+    "static/media/image1.png": "/mockde/static/media/image1.ee24b742b17c045ee6c9.png",
+    "static/media/image4.png": "/mockde/static/media/image4.a8337410665a8adc1944.png",
+    "static/media/image2.png": "/mockde/static/media/image2.d8e1d26fa5ea8b5df3b9.png",
+    "static/media/image6.png": "/mockde/static/media/image6.5aa226c7ef1059c42fd1.png",
+    "static/media/card-img3.png": "/mockde/static/media/card-img3.ea29c1e7600201a4e962.png",
+    "static/media/avatar.png": "/mockde/static/media/avatar.0c9b264ac888de4fa958.png",
+    "index.html": "/mockde/index.html",
+    "main.c9ec4081.css.map": "/mockde/static/css/main.c9ec4081.css.map",
+    "main.21b544e2.js.map": "/mockde/static/js/main.21b544e2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c9ec4081.css",
+    "static/js/main.21b544e2.js"
+  ]
+}
