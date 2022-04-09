@@ -1,4 +1,3 @@
-import React, { useState, useEffect, useRef } from "react";
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -6,15 +5,16 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import Stack from 'react-bootstrap/Stack'
-import heroImg from './img/hero.png'
-import logo from './img/logo.png'
-import logoLight from './img/logo-light.png'
-import circle from './img/circle.png'
+import Image from 'react-bootstrap/Image'
+
 import { ParallaxProvider } from 'react-scroll-parallax';
 import { Parallax } from 'react-scroll-parallax';
+
 import Section from './components/Section';
 import Content from "./components/Content";
 import Img from "./components/Image";
+import CardCustom from "./components/CardCustom";
+
 import image1 from "./img/image1.png"
 import image2 from "./img/image2.png"
 import image3 from "./img/image3.png"
@@ -24,22 +24,16 @@ import image6 from "./img/image6.png"
 import cardImg1 from "./img/card-img1.png"
 import cardImg2 from "./img/card-img2.png"
 import cardImg3 from "./img/card-img3.png"
-
-
-import Image from 'react-bootstrap/Image'
 import avatar from './img/avatar.png'
-import CardCustom from "./components/CardCustom";
+import heroImg from './img/hero.png'
+import logo from './img/logo.png'
+import logoLight from './img/logo-light.png'
+import circle from './img/circle.png'
 
-
-
-
-import { AnimationOnScroll } from 'react-animation-on-scroll';
-
+import ScrollAnimation from 'react-scroll-animation-wrapper';
 
 
 function App() {
-//find how to cache images on react
-
   return (
     <>
     <Navbar expand="lg" className="py-3">
@@ -67,126 +61,123 @@ function App() {
     </Navbar>
 
     <ParallaxProvider>
-
-      <Container 
-      style={{height: "100%", marginBottom:"1rem"}}
-      >
-
-      <Row className=".justify-content-center justify-content-lg-between h-100 align-items-center gy-3 py-3" style={{minHeight: "calc(100vh - 83px"}}>
-        <Col sm={12} md="10" lg={5} className="py-5 mx-auto" >
-          <h1 className="mb-3">We serve clients with ground breaking solutions</h1>
-          <p className="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam leo odio, sagittis quis ornare quis.</p>
-          <Button variant="custom btn-custom-primary">Work with us</Button>
-        </Col>
-        <Col sm={12} md="10" lg={5} className="mx-auto">
-          <div className="hero-img-container">
-            <img className="img-fluid m-auto" src={heroImg} alt=""/>
-            <Parallax className="circle" rotate={[0, 360]}>
-            <img 
-              src={circle} alt=""/>
-            </Parallax>
-          </div>
-        </Col>
-      </Row>
-
-      <AnimationOnScroll animateOnce={true} animateIn="animate__fadeInLeftBig">
-        <Section customHeight="100vh" direct="row-reverse">
-        <Content pat="5" pab="3">
-            <h2 className="mb-3">Business strategy</h2>
-            <p className="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam leo odio, sagittis quis ornare quis.</p>
-            <ul>
-              <li>Cost strategy</li>
-              <li>Differentiated product or service strategy</li>
-              <li>Focus on a niche strategy</li>
-            </ul>
+      <Container style={{height: "100%"}}>
+        <Section customHeight="calc(100vh - 83px" direct="row">
+          <Content className="pt-3 pt-lg-0 mb-4 mb-lg-0">
+            <h1 className="mb-3">We serve clients with ground breaking solutions</h1>
+            <p className="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam leo odio, sagittis quis ornare quis.</p>
+            <Button variant="custom btn-custom-primary">Work with us</Button>
           </Content>
-          <Content pad="0">
-            <Img img={image1} customClass="img-container">
-            <Parallax className="decor left" speed={5}>
-              <div className="square"></div>
-            </Parallax>
-            </Img>
+          <Content className="mb-5 mb-lg-0">
+            <div className="hero-img-container">
+              <img className="img-fluid m-auto" src={heroImg} alt=""/>
+              <Parallax className="circle" rotate={[0, 360]}>
+              <img 
+                src={circle} alt=""/>
+              </Parallax>
+            </div>
           </Content>
         </Section>
-      </AnimationOnScroll>
 
-      <AnimationOnScroll animateOnce={true} animateIn="animate__fadeInLeftBig">
+        <ScrollAnimation animateIn="animate__fadeInLeftBig" animateOnce>
+          <Section customHeight="100vh" direct="row-reverse">
+          <Content className="mb-3 mb-lg-0">
+              <h2 className="mb-3">Business strategy</h2>
+              <p className="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam leo odio, sagittis quis ornare quis.</p>
+              <ul>
+                <li>Cost strategy</li>
+                <li>Differentiated product or service strategy</li>
+                <li>Focus on a niche strategy</li>
+              </ul>
+            </Content>
+            <Content className="mb-5 mb-lg-0" >
+              <Img img={image1} customClass="img-container">
+              <Parallax className="decor left" speed={5}>
+                <div className="square"></div>
+              </Parallax>
+              </Img>
+            </Content>
+          </Section>
+        </ScrollAnimation>
+
+        <ScrollAnimation animateIn="animate__fadeInLeftBig" animateOnce>
+          <Section customHeight="100vh" direct="row">
+          <Content className="mb-3 mb-lg-0">
+              <h2 className="mb-3">Digitalization</h2>
+              <p className="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam leo odio, sagittis quis ornare quis.met, consectetur adipiscing elit. Aliquam leo odio, sagittis quis ornare quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam leo odio, sagittis.</p> 
+            </Content>
+            <Content className="mb-5 mb-lg-0">
+              <Img img={image2} customClass="img-container">
+              <Parallax className="decor right" speed={5}>
+                <div className="square"></div>
+              </Parallax>
+              </Img>
+            </Content>
+          </Section>
+        </ScrollAnimation>
+
+        <ScrollAnimation animateIn="animate__fadeInLeftBig" animateOnce>
+          <Section customHeight="100vh" direct="row-reverse">
+          <Content className="mb-3 mb-lg-0">
+              <h2 className="mb-3">Risk assessment</h2>
+              <p className="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam leo odio, sagittis quis ornare quis.</p>
+              <ul>
+                <li>Individual risk assessment</li>
+                <li>Systems risk assessment</li>
+                <li>Mathematical conceptualization</li>
+              </ul>
+            </Content>
+            <Content className="mb-5 mb-lg-0">
+              <Img img={image3} customClass="img-container">
+              <Parallax className="decor left" speed={5}>
+                <div className="square"></div>
+              </Parallax>
+              </Img>
+            </Content>
+          </Section>
+        </ScrollAnimation>
+
+        <ScrollAnimation animateIn="animate__fadeInLeftBig" animateOnce>
+          <Section customHeight="100vh" direct="row">
+          <Content className="mb-3 mb-lg-0"> 
+              <h2 className="mb-3">Artificial intelligence</h2>
+              <p className="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam leo odio, sagittis quis ornare quis.met, consectetur adipiscing elit. Aliquam leo odio, sagittis quis ornare quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam leo odio, sagittis.</p>
+            </Content>
+            <Content className="mb-5 mb-lg-0">
+              <Img img={image4} customClass="img-container">
+              <Parallax className="decor right" speed={5}>
+                <div className="square"></div>
+              </Parallax>
+              </Img>
+            </Content>
+          </Section>
+        </ScrollAnimation>
+
+
+        <ScrollAnimation animateIn="animate__fadeInLeftBig" animateOnce>
+          <Section customHeight="100vh" direct="row-reverse">
+          <Content className="mb-3 mb-lg-0">
+              <h2 className="mb-3">Smart Contract</h2>
+              <p className="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam leo odio, sagittis quis ornare quis.met, consectetur adipiscing elit. Aliquam leo odio, sagittis quis ornare quis.</p>
+              <ul>
+                <li>Smart contract implementation</li>
+                <li>Smart legal contracts</li>
+                <li>Basic contract law</li>
+              </ul>
+            </Content>
+            <Content className="mb-5 mb-lg-0">
+              <Img img={image5} customClass="img-container">
+              <Parallax className="decor left" speed={5}>
+                <div className="square"></div>
+              </Parallax>
+              </Img>
+            </Content>
+          </Section>
+        </ScrollAnimation>
+
+        <ScrollAnimation animateIn="animate__fadeInLeftBig" animateOnce>
         <Section customHeight="100vh" direct="row">
-        <Content pat="5" pab="3">
-            <h2 className="mb-3">Digitalization</h2>
-            <p className="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam leo odio, sagittis quis ornare quis.met, consectetur adipiscing elit. Aliquam leo odio, sagittis quis ornare quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam leo odio, sagittis.</p> 
-          </Content>
-          <Content pad="0">
-            <Img img={image2} customClass="img-container">
-            <Parallax className="decor right" speed={5}>
-              <div className="square"></div>
-            </Parallax>
-            </Img>
-          </Content>
-        </Section>
-      </AnimationOnScroll>
-
-      <AnimationOnScroll animateOnce={true} animateIn="animate__fadeInLeftBig">
-        <Section customHeight="100vh" direct="row-reverse">
-        <Content pat="5" pab="3">
-            <h2 className="mb-3">Risk assessment</h2>
-            <p className="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam leo odio, sagittis quis ornare quis.</p>
-            <ul>
-              <li>Individual risk assessment</li>
-              <li>Systems risk assessment</li>
-              <li>Mathematical conceptualization</li>
-            </ul>
-          </Content>
-          <Content pad="0">
-            <Img img={image3} customClass="img-container">
-            <Parallax className="decor left" speed={5}>
-              <div className="square"></div>
-            </Parallax>
-            </Img>
-          </Content>
-        </Section>
-      </AnimationOnScroll>
-
-      <AnimationOnScroll animateOnce={true} animateIn="animate__fadeInLeftBig">
-        <Section customHeight="100vh" direct="row">
-        <Content pat="5" pab="3">
-            <h2 className="mb-3">Artificial intelligence</h2>
-            <p className="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam leo odio, sagittis quis ornare quis.met, consectetur adipiscing elit. Aliquam leo odio, sagittis quis ornare quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam leo odio, sagittis.</p>
-          </Content>
-          <Content pad="0">
-            <Img img={image4} customClass="img-container">
-            <Parallax className="decor right" speed={5}>
-              <div className="square"></div>
-            </Parallax>
-            </Img>
-          </Content>
-        </Section>
-      </AnimationOnScroll>
-
-      <AnimationOnScroll animateOnce={true} animateIn="animate__fadeInLeftBig">
-        <Section customHeight="100vh" direct="row-reverse">
-        <Content pat="5" pab="3">
-            <h2 className="mb-3">Smart Contract</h2>
-            <p className="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam leo odio, sagittis quis ornare quis.met, consectetur adipiscing elit. Aliquam leo odio, sagittis quis ornare quis.</p>
-            <ul>
-              <li>Smart contract implementation</li>
-              <li>Smart legal contracts</li>
-              <li>Basic contract law</li>
-            </ul>
-          </Content>
-          <Content pad="0">
-            <Img img={image5} customClass="img-container">
-            <Parallax className="decor left" speed={5}>
-              <div className="square"></div>
-            </Parallax>
-            </Img>
-          </Content>
-        </Section>
-      </AnimationOnScroll>
-
-      <AnimationOnScroll animateOnce={true} animateIn="animate__fadeInLeftBig">
-        <Section customHeight="100vh" direct="row">
-        <Content pat="4" pab="3">
+        <Content className="mb-3 mb-lg-0">
             <h2 className="mb-3">Finsweet was a dream to work with</h2>
             <p className="mb-4">Maecenas efficitur scelerisque lorem, et varius lacus tincidunt vel. Pellentesque a arcu vitae diam dapibus mattis vel vel orci. Vivamus eleifend nec felis vel auctor.</p>
             <Stack direction="horizontal" gap={3}>
@@ -197,13 +188,14 @@ function App() {
               </Stack>
             </Stack>
           </Content>
-          <Content pab="3">
+          <Content >
             <Img img={image6} customClass="img-container">
             </Img>
           </Content>
         </Section>
-      </AnimationOnScroll>      
-    </Container>
+      </ScrollAnimation>
+      </Container>
+    </ParallaxProvider>
 
     <Container fluid style={{background:"#DCEAF5", padding:0, margin:0}}>
       <Container>
@@ -216,7 +208,6 @@ function App() {
                 <CardCustom img={cardImg3} title="Helping the next generation of leaders"/> 
               </div>
               </Col>
-
         </Row>
       </Container>
     </Container>
@@ -265,10 +256,8 @@ function App() {
         </Col>
         </Row>
       </Container>
-      </Container>
+    </Container>
 
-
-    </ParallaxProvider>
     </>
   );
 }
